@@ -1,0 +1,14 @@
+<%-include("partials/header")-%>
+<h1>Home</h1>
+<p><%=homeStartingContent%></p>
+
+
+<% posts.forEach(function (post){
+    //truncate post down to 100 letters
+    %>
+ <h1><%= post.title%></h1>
+ <%const postContent = post.content;
+ let truncatedPost = postContent.slice(0,100);%> 
+ <p><%= truncatedPost %> ...<a href="/posts/<%=post.title%>">Read More</a></p>
+<%});%>
+<%-include("partials/footer")-%>
